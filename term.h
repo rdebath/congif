@@ -27,7 +27,7 @@
 #if !BCE
   #define BLANK (Cell) {EMPTY, def_attr, def_pair}
 #else
-  #define BLANK (Cell) {EMPTY, term->attr, term->pair}
+  #define BLANK (Cell) {EMPTY, def_attr, (DEF_FORE << 4) | (term->pair & 0x0F)}
 #endif
 
 #define MAX_PARTIAL 0x100
